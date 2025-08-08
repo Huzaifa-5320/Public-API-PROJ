@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cocktail Finder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>Cocktail Finder</h1>
+
+  <form action="/search" method="get">
+    <input type="text" name="term" placeholder="Search cocktails..." value="<%= searchTerm || '' %>" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (drinks && drinks.length > 0) { %>
+    <div class="grid">
+      <% drinks.forEach(drink => { %>
+        <div class="card">
+          <img src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>">
+          <h3><%= drink.strDrink %></h3>
+          <a href="/cocktail/<%= drink.idDrink %>">View details</a>
+        </div>
+      <% }) %>
+    </div>
+  <% } else if (searchTerm) { %>
+    <p>No drinks found for "<%= searchTerm %>".</p>
+  <% } %>
+</body>
+</html>

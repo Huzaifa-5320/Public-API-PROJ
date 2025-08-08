@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= drink.strDrink %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="details-container">
+    <a href="/" class="back-link">← Back to Search</a>
+
+    <h1><%= drink.strDrink %></h1>
+    <img src="<%= drink.strDrinkThumb %>" alt="<%= drink.strDrink %>" class="drink-image">
+
+    <h2>Glass</h2>
+    <p><%= drink.strGlass %></p>
+
+    <h2>Ingredients</h2>
+    <ul>
+      <% for (let i = 1; i <= 15; i++) { 
+           const ingredient = drink[`strIngredient${i}`];
+           const measure = drink[`strMeasure${i}`];
+           if (ingredient) { %>
+        <li><%= ingredient %> <%= measure ? `- ${measure}` : '' %></li>
+      <% }} %>
+    </ul>
+
+    <h2>Instructions</h2>
+    <p><%= drink.strInstructions %></p>
+  </div>
+</body>
+</html>
