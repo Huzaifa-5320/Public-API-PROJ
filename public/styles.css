@@ -1,97 +1,118 @@
+/* General body styling with background image */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #fdf6f0;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  color: white;
 }
 
+/* Page heading */
 h1 {
   text-align: center;
-  color: #d35400;
+  font-size: 2.8rem;
+  margin: 0 0 1rem;
+  padding-top: 2rem;
 }
 
+/* Search form styling */
 form {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 2rem;
 }
 
 input {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  font-size: 1rem;
+  width: 250px;
 }
 
 button {
-  padding: 8px 12px;
-  background-color: #d35400;
-  color: white;
+  padding: 0.8rem 1.2rem;
+  margin-left: 0.5rem;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
+  color: white;
+  font-size: 1rem;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #e67e22;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.card {
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  overflow: hidden;
-  width: 200px;
-  text-align: center;
   transition: transform 0.2s ease;
 }
 
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Grid for cocktails */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* Cocktail card styling */
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
 }
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 220px;
+  object-fit: cover;
 }
 
 .card h3 {
-  padding: 10px;
-  font-size: 1.1em;
+  margin: 1rem 0;
+  font-size: 1.3rem;
 }
 
+/* View details button */
 .card a {
-  display: block;
-  padding: 10px;
-  background-color: #d35400;
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, #ff4e50, #f9d423);
   color: white;
   text-decoration: none;
+  border-radius: 10px;
+  transition: transform 0.2s ease;
 }
 
 .card a:hover {
-  background-color: #e67e22;
+  transform: scale(1.05);
 }
 
+/* Cocktail details page */
 .details-container {
-  max-width: 600px;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 2rem auto;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
 .back-link {
   display: inline-block;
   margin-bottom: 15px;
   text-decoration: none;
-  color: #d35400;
+  color: #f9d423;
   font-weight: bold;
 }
 
